@@ -1,6 +1,6 @@
 # game-of-life
 
-Whoa! I was digging through my old floppy disk archive and came across an old implementation of Conway's Game of Life I did. So here it is.
+Whoa! I was digging through my old floppy disk archive and came across an old implementation of Conway's Game of Life I did, circa 1994. So here it is.
 
 Crazy tidbits:
 - Its in Fortran 90 (!). Yes Fortran windows apps do exist. I do not remember what possessed me to do it in Fortran since I knew C/C++/many other lenguages at the time.
