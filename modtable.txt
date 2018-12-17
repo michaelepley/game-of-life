@@ -1,0 +1,9 @@
+# This file contains Lahey LF90 module information
+# Created on Tue Aug 04 10:17:12 1998
+# Each line contains the module name, followed by the DOS file
+# name used to store module information and library object
+# data files, followed by the name of the sourcefile for the module.
+# Lines beginning with # are comments.
+gameoflife gameofl0 d:\epley\temp\life\gamelife.f90
+fillstyles fillsty0 d:\epley\temp\life\gamelife.f90
+transformtypes transfo0 d:\epley\temp\life\gamelife.f90

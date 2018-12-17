@@ -1,0 +1,138 @@
+# The Source of all the rules
+#<--- begins a comment, must be in first column
+#
+# How the algorithm determines if a cell lives or dies:
+# 1.  For each neighbor of a given cell and the cell itself, the
+#     following "life" score is assigned:
+#        DefaultDeadWeight+DefaultLiveWeight*GetAgeWeight(Age,AgeweightList)
+# 2.  All the weights are then summed together.  If the sum is:
+#     A.  equal to a birth point and it is not alive, it becomes
+#         alive
+#     B.  less than or equal to the Minimum for life when the
+#         Minimum for life is a single number and the cell is
+#         presently alive, it will continue to live
+#     C.  equal to a number in the range of Minimum for life when
+#         the minimum for life is more than one number and the cell
+#         is presently alive, it will continue to live, otherwise it
+#         will die
+#     D.  Greater than or equal to the Die from overcrowding at when
+#         this is a single number and the cell is presently alive,
+#         it will die
+#     E.  Equal to a number in the range of Die from overcrowding at
+#         when this is a range of numbers and the cell is presently
+#         alive, it will die
+#     F.  Otherwise, the cell remains unchanged
+#
+#
+# GENERAL FORMAT:
+#------------------
+# 1.  NAME
+# 2.  birth point(s) --- comma seperated list or range #-#
+# 3.  Minimum for Life (at least this many), if a list or range, the neigbor count must equal one of the numbers in the list
+# 4.  Die from overcrowding at
+# 5.  List of age weights for the cell itself
+# 6.  List of age weights for the lower left cell
+#
+# AGE WEIGHT LIST FORMAT:
+# 1.  An integer for the default Dead weight.  This is minimum "life score" if the cell is dead (age=0)
+# 2.  An integer for the default Dead weight.
+#
+# Conway's rule set is the original, and about the only
+# interesting one around.
+Conway's
+3,4
+2-3
+4
+1   1   1   1   1   1   1   1   1
+# HighLife, a variant of Conway's rules with simple replicators
+HighLife
+3,6
+2-4<>
+4
+1 1 1 1 1 1 1 1
+#
+Sides Only
+3
+2
+4
+0 1 0 1 0 1 0 1
+#
+Corners Only
+3
+2
+4
+1 0 1 0 1 0 1 0
+#
+Left Sided
+3
+2
+4
+1 1 1 0 0 0 0 0
+#
+Right Sided
+3
+2
+4
+0 0 0 0 1 1 1 0
+#
+Top Sided
+3
+2
+4
+0 0 1 1 1 0 0 0
+#
+Bottom Sided
+3
+2
+4
+1 0 0 0 0 0 1 1
+#
+Equal Weights
+3
+2
+4
+1 1 1 1 1 1 1 1
+#
+Easy Birth
+2
+2
+4
+1 1 1 1 1 1 1 1
+#
+Easy Life
+3
+1
+4
+1 1 1 1 1 1 1 1
+#
+EasyDeath
+3
+2
+3
+1 1 1 1 1 1 1 1
+#
+Hard Birth
+4
+2
+4
+1 1 1 1 1 1 1 1
+#
+Hard Life
+3
+3
+4
+1 1 1 1 1 1 1 1
+#
+Hard Death
+3
+2
+5
+1 1 1 1 1 1 1 1
+#
+# User Defined is allways there, but you can change the default
+# values here, otherwise it defaults to Conway's rules
+User Defined
+1
+2
+4
+0 1 0 1 0 1 0 1
